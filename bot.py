@@ -272,7 +272,7 @@ def main():
         listen="0.0.0.0",
         port=8443,
         url_path=TOKEN,
-        webhook_url="https://YOUR_DOMAIN/" + TOKEN
+        webhook_url="https://my-telegram-bot-dnvk.onrender.com" + TOKEN
     )
 
 if __name__ == "__main__":
