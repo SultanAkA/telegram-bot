@@ -267,12 +267,13 @@ def main():
     # Обработчик callback-запросов
     application.add_handler(CallbackQueryHandler(handle_callback))
 
-    # Настройка вебхука (замените YOUR_DOMAIN на ваш домен или IP после деплоя)
+    # Настройка вебхука с динамическим портом
+    port = int(os.getenv("PORT", 8443))
     application.run_webhook(
         listen="0.0.0.0",
-        port=8443,
+        port=port,
         url_path=TOKEN,
-        webhook_url="https://my-telegram-bot-dnvk.onrender.com" + TOKEN
+        webhook_url="https://my-telegram-bot-dnvk.onrender.com/" + TOKEN
     )
 
 if __name__ == "__main__":
